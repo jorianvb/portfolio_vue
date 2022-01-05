@@ -1,10 +1,9 @@
 <template>
   <a-layout>
     <a-layout-header>
-
-    <navigation-list></navigation-list>
+      <navigation-list></navigation-list>
     </a-layout-header>
-    <a-layout-content>
+    <a-layout-content style="padding:20px; background-color:white">
       <router-view></router-view>
     </a-layout-content>
     <a-layout-footer></a-layout-footer>
