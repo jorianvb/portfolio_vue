@@ -14,6 +14,11 @@
             <a-avatar :src="ex.image" />
           </template>
         </a-card-meta>
+        <br/>
+          <a-tag v-for="(tech, index) in ex.technos"
+          :key=index>
+            {{tech}}
+          </a-tag>
       </a-card>
     </a-timeline-item>
   </a-timeline>
@@ -41,6 +46,7 @@ export default {
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
         moreDescription : "tada",
         isMoreDescription : false,
+        technos : ["java", "angular"]
       },
       {
         year : "mai 2016 - aout 2016",
@@ -51,6 +57,7 @@ export default {
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
         moreDescription : "tada",
         isMoreDescription : false,
+        technos : ["java", "angular"]
       },
       {
         year : "février 2017 - aout 2017",
@@ -61,6 +68,7 @@ export default {
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
         moreDescription : "tada",
         isMoreDescription : false,
+        technos : ["java", "angular"]
       },
       {
         year : "octobre 2017 - octobre 2021",
@@ -71,6 +79,7 @@ export default {
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
         moreDescription : "tada",
         isMoreDescription : false,
+        technos : ["java", "angular"]
       },
       ] 
   }),
