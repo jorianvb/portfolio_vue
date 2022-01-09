@@ -5,6 +5,9 @@
      :key = index
     >
       <a-card>
+        <template #extra>
+          <span @click="extendsDescription(index)"><informationIcon/></span>
+        </template>
         <p><mapMarkerIcon small/> {{ex.location}} </p>
         <a-card-meta :title="ex.title" :description="ex.description">
           <template #avatar>
@@ -19,43 +22,67 @@
 <script>
 
 import MapMarkerIcon from 'vue-material-design-icons/MapMarker.vue'; 
+import InformationIcon from 'vue-material-design-icons/Information.vue';
 
 export default {
   name: "Experience", 
   components : {
     MapMarkerIcon,
+    InformationIcon
   },
   data : () => ({
     experience : [
       {
         year : "2014 - 2017",
         title : "Diplôme ingénieur",
-        description : "Obtention d'un diplôme d'ingénieur en informatique et mathématique appliquées \n spécialité ingéniérie des systèmes d'informations",
-        location : "Grenoble",
+        summary : "Spécialité ingéniérie des systèmes d'informations",
+        description : "Spécialité ingéniérie des systèmes d'informations",
+        location : "ENSIMAG - Grenoble",
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
+        moreDescription : "tada",
+        isMoreDescription : false,
       },
       {
         year : "mai 2016 - aout 2016",
         title : "Stage assistant ingénieur",
-        description : "Stage assistant ingénieur à Thalès avionics",
-        location : "Valence",
+        summary : "Mise en place d'une solution d'intégration continue sur le poste de développeur",
+        description : "Mise en place d'une solution d'intégration continue sur le poste de développeur",
+        location : "Thales Avionic - Valence",
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
+        moreDescription : "tada",
+        isMoreDescription : false,
       },
       {
         year : "février 2017 - aout 2017",
         title : "Projet de fin d'étude",
-        description : "Projet de fin d'étude à SQLI",
-        location : "Lyon",
+        summary : "Maintenance évolutive pour le compte de Groupama",
+        description : "Maintenance évolutive pour le compte de Groupama",
+        location : "SQLI - Lyon",
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
+        moreDescription : "tada",
+        isMoreDescription : false,
       },
       {
         year : "octobre 2017 - octobre 2021",
         title : "Ingénieur conception développement",
+        summary : "Développement de plusieurs projets pour le compte de KleeGroup",
         description : "Développement de plusieurs projets pour le compte de KleeGroup",
-        location : "Lyon",
+        location : "Klee Group - Lyon",
         image : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_ENSIMAG_2008.svg",
-      },] 
+        moreDescription : "tada",
+        isMoreDescription : false,
+      },
+      ] 
   }),
+  methods :{
+    extendsDescription(index) {
+      let ex = this.experience[index]
+      console.log(ex)
+      ex.isMoreDescription = !ex.isMoreDescription;
+      ex.description = ex.isMoreDescription ? ex.moreDescription : ex.summary
+      console.log(ex.isMoreDescription)
+    }
+  },
 }
 </script>
 
