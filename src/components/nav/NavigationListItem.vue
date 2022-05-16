@@ -14,7 +14,9 @@ export default {
       items: [
         {text: 'A propos', router: "/"},
         {text: 'Expérience', router: "/experience"},
-        {text: 'Contact', router: "/contact"},]
+        {text: 'Contact', router: "/contact"},
+        {text: 'Projet', router: "/project"},
+        ]
     }
   }
 }
