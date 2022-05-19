@@ -5,37 +5,43 @@
   Ce projet à pour but de me présenter à vous, et pour moi de découvrir le monde fabuleux de Vue3.</p>
 
   <p>Sur ce site, vous allez découvrir mes compétences, mon parcours et mes futures projets. N'hésitez pas à me contacter !</p>
-
+  
   <h2>Mes qualités</h2>
   <a-row>
-  <a-col :span="8"><area-chart-outlined :style="{fontSize : '32px', color:'blue'}"/> 
+  <a-col :span="8"><QuestionCircleTwoTone :style="{fontSize : '32px', color:'blue'}"/> 
       <br/> Curieux 
-      <br/> J'adore découvrir de nouvelles technologies et de nouvelles façons de travailler. Les challenges et les recherches me passionnent.
+      <br/> J'adore      découvrir de nouvelles technologies et de nouvelles façons de travailler. Les challenges et les recherches me passionnent.
   </a-col>
-  <a-col :span="8"><area-chart-outlined :style="{fontSize : '32px', color:'blue'}"/> 
+  <a-col :span="8"><EditTwoTone :style="{fontSize : '32px', color:'blue'}"/> 
       <br/> Travailleur
       <br/> Je n'hésite pas à travailler pour arriver à un résultat qui me satisfait. Je tiens également mes engagements. 
       </a-col> 
-  <a-col :span="8"><area-chart-outlined :style="{fontSize : '32px', color:'blue'}"/> 
+  <a-col :span="8"><MessageTwoTone :style="{fontSize : '32px', color:'blue'}" twoToneColor="red"/> 
       <br/> Coopératif
       <br/> Le travail en équipe me permet d'évoluer et de continuer à apprendre de nouvelles choses. On est toujours meilleurs en équipe !.
   </a-col>
   </a-row>
 
   <h2>Mes technologies</h2>
-  <a-progress v-for="technology in technologies" :key="technology.name" type="circle" :percent="technology.percent" :format="() => technology.name"></a-progress>
+  <a-tooltip v-for="technology in technologies" :key="technology.name">
+    <template #title>
+      {{technology.percent}}%eee
+    </template>
+    <a-progress type="circle" :percent="technology.percent" :format="() => technology.name"></a-progress>
+  </a-tooltip> 
 </template>
 
 
 
 <script>
 
-import { AreaChartOutlined } from '@ant-design/icons-vue';
-
+import { QuestionCircleTwoTone, EditTwoTone, MessageTwoTone } from '@ant-design/icons-vue';
 export default {
   name: "Home",
   components :{
-    AreaChartOutlined
+    QuestionCircleTwoTone,
+    EditTwoTone,
+    MessageTwoToeene
   }, 
   data : () => ({
     technologies : [
