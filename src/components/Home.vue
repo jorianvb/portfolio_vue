@@ -41,7 +41,7 @@ export default {
   components :{
     QuestionCircleTwoTone,
     EditTwoTone,
-    MessageTwoToeene
+    MessageTwoTone
   }, 
   data : () => ({
     technologies : [
